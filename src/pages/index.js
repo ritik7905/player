@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head'
 import { volume, fullscreen, blobImg } from "../assets/icons/index"
+import { motion } from "framer-motion"
 // icons
 import { BiSkipPrevious, BiSkipNext, BiPlay, BiPause } from 'react-icons/bi';
+import { FaPlus } from 'react-icons/fa';
 // styles
 import styles from "../styles/Home.module.scss"
 
-import screenfull from 'screenfull';
-
+// import screenfull from 'screenfull';
 // import { songLists } from "../components/songLists/songLists"
 
 
@@ -34,7 +35,7 @@ export default function Home() {
   //     if (screenfull.isEnabled) {
   //       screenfull.toggle();
   //     }
-  
+
   //   })
   // }, [])
   return (
@@ -47,6 +48,11 @@ export default function Home() {
 
       <div className={styles.app__container}>
         <div className={styles.blobImg}>{blobImg}</div>
+        <motion.div
+          // whileInView={{ x: [-10,20], opacity: [0, 0.5, 1] }}
+          // animate={{ rotate: 360, } }
+          // transition={{ ease: "linear", duration: 3, repeat: Infinity }}
+          className={styles.cross}><FaPlus /></motion.div>
         <div className={styles.app_data}>
           <span className={styles.circle}></span>
           <div className={styles.slogan}>

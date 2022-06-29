@@ -19,6 +19,20 @@
         top: -165px;
         left: -210px;
     }
+    .cross {
+        position: absolute;
+        left: 0;
+        margin-top: -35px;
+        animation: cross alternate-reverse;
+        @keyframes cross {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+    }
     .app_data {
         max-width: 50%;
         position: relative;
@@ -26,7 +40,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50px;
-            background-color: #00FFDCed;
+            background-color: #00ffdced;
             position: absolute;
             top: 80px;
             left: 270px;
