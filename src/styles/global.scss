@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Ubuntu Condensed', sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -15,7 +16,7 @@ a {
     box-sizing: border-box;
 }
 
-.app__container {
+.home {
     max-width: 1920px;
     margin: 0 auto;
 }

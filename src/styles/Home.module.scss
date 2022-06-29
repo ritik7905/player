@@ -2,116 +2,122 @@
     padding: 0 2rem;
     background-color: #fdefdd;
     height: 100vh;
+    width: 100%;
 }
 
 .app__container {
+    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    height: 100vh;
-    .blobImg {
-        overflow: hidden;
-        width: 30%;
-        transform: rotate(145deg);
-        position: absolute;
-        top: -165px;
-        left: -210px;
-    }
-    .cross {
-        position: absolute;
-        left: 0;
-        margin-top: -35px;
-        animation: cross alternate-reverse;
-        @keyframes cross {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(100%);
-            }
-        }
-    }
-    .app_data {
-        max-width: 50%;
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.intro_data {
+    display: flex;
+    justify-content: space-between;
+    // width: 100%;
+    align-items: center;
+    .slog {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        line-height: 1;
         position: relative;
-        .circle {
-            width: 40px;
-            height: 40px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid #9e9890;
+        .spot {
+            height: 50px;
+            width: 50px;
             border-radius: 50px;
-            background-color: #00ffdced;
+            background-color: #00ffdc;
             position: absolute;
             top: 80px;
-            left: 270px;
+            left: -25px;
         }
-        .slogan {
-            padding: 35px 0;
-            border-bottom: 2px solid #cbb2a8;
-        }
-        .title {
-            font-size: 10rem;
-            font-weight: bold;
+        .swot {
+            font-size: 20rem;
+            font-weight: 500;
             color: #505050;
-            text-align: center;
-            line-height: 1.1;
-            width: 50%;
-            margin: 0 auto;
+        }
+        .anls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .plus {
+                font-size: 110px;
+            }
+            .analysis {
+                font-size: 10rem;
+                font-weight: 500;
+                color: #505050;
+            }
         }
     }
-    .description {
-        color: #505050;
-        text-align: center;
-        text-transform: uppercase;
-        padding-top: 30px;
-        width: 80%;
-        font-size: 32px;
-        font-weight: 100;
-        margin: 0 auto;
+    .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        box-shadow: 15px 15px 0 0 #d9c2aced;
+        transform: rotate(227deg);
+        font-size: 40px;
     }
 }
 
 .player {
     background-color: #e3d7c6;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px 5px;
+    align-items: center;
     max-width: 50%;
-    margin: 0 auto;
-    margin-top: 85px;
-    .volume,
-    .time_span,
-    .fullscreen {
-        margin: 0 30px;
-        cursor: pointer;
-    }
-    .song_controler {
+    position: absolute;
+    bottom: 70px;
+    .player_data {
         display: flex;
+        justify-content: center;
         align-items: center;
-        div {
-            margin: 0 15px;
+        padding: 20px 5px;
+        .volume,
+        .time_span,
+        .fullscreen {
+            margin: 0 30px;
+            cursor: pointer;
         }
-        .song_lists {
+        .song_controler {
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100%;
-             :nth-child(1) {
-                margin-left: -20px;
+            div {
+                margin: 0 15px;
             }
-             :nth-child(2) {
-                svg {
-                    margin-left: 10px;
+            .song_lists {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                 :nth-child(1) {
+                    margin-left: -20px;
+                }
+                 :nth-child(2) {
+                    svg {
+                        margin-left: 10px;
+                    }
+                }
+                .btns {
+                    transition: all 0.5s;
                 }
             }
-            .btns {
-                transition: all 0.5s;
+            svg {
+                font-size: 35px;
+                cursor: pointer;
             }
-        }
-        svg {
-            font-size: 35px;
-            cursor: pointer;
         }
     }
 }
