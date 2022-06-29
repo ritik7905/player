@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.app__container {
+    max-width: 1920px;
+    margin: 0 auto;
+}

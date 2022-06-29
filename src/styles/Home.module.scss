@@ -1,0 +1,103 @@
+.home {
+    padding: 0 2rem;
+    background-color: #fdefdd;
+    height: 100vh;
+}
+
+.app__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    .blobImg {
+        overflow: hidden;
+        width: 30%;
+        transform: rotate(145deg);
+        position: absolute;
+        top: -165px;
+        left: -210px;
+    }
+    .app_data {
+        max-width: 50%;
+        position: relative;
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            background-color: #00FFDCed;
+            position: absolute;
+            top: 80px;
+            left: 270px;
+        }
+        .slogan {
+            padding: 35px 0;
+            border-bottom: 2px solid #cbb2a8;
+        }
+        .title {
+            font-size: 10rem;
+            font-weight: bold;
+            color: #505050;
+            text-align: center;
+            line-height: 1.1;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    .description {
+        color: #505050;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 30px;
+        width: 80%;
+        font-size: 32px;
+        font-weight: 100;
+        margin: 0 auto;
+    }
+}
+
+.player {
+    background-color: #e3d7c6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 5px;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 85px;
+    .volume,
+    .time_span,
+    .fullscreen {
+        margin: 0 30px;
+        cursor: pointer;
+    }
+    .song_controler {
+        display: flex;
+        align-items: center;
+        div {
+            margin: 0 15px;
+        }
+        .song_lists {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+             :nth-child(1) {
+                margin-left: -20px;
+            }
+             :nth-child(2) {
+                svg {
+                    margin-left: 10px;
+                }
+            }
+            .btns {
+                transition: all 0.5s;
+            }
+        }
+        svg {
+            font-size: 35px;
+            cursor: pointer;
+        }
+    }
+}
