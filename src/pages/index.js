@@ -7,8 +7,8 @@ import { FaPlus } from 'react-icons/fa';
 // styles
 import styles from "../styles/Home.module.scss"
 
-// import screenfull from 'screenfull';
-// import { songLists } from "../components/songLists/songLists"
+import screenfull from 'screenfull';
+import { songLists } from "../components/songLists/songLists"
 
 
 
@@ -18,25 +18,27 @@ export default function Home() {
   // state for song play or not
   const [play, setPlay] = useState(false)
   // state for songs lists
-  const [songList, setSongsLists] = useState(1)
+  const [songs, setSongs] = useState(songLists)
 
   const play_pause_btn = () => {
-    if (play) {
-      setPlay(false)
-    } else if (!play) {
+    if (!play) {
       setPlay(true)
+     
+  
+    } 
+    else if (play) {
+      setPlay(false)
+
     }
   }
 
-  // useEffect(() => {
-  //   const fullScreen = document.getElementById('fullscreen');
-  //   fullScreen.addEventListener("click", ()=>{
-  //     if (screenfull.isEnabled) {
-  //       screenfull.toggle();
-  //     }
+  // FullScreen 
+  const expanScreen = () => {
+    if (screenfull.isEnabled) {
+      screenfull.toggle();
+    }
 
-  //   })
-  // }, [])
+  }
   return (
     <div className={styles.home}>
       <div className={styles.app__container}>
@@ -63,7 +65,7 @@ export default function Home() {
               <div className={styles.song_lists}><span>01 / 12</span> <span onClick={play_pause_btn} className={styles.btns}>{!play ? <BiPlay /> : <BiPause />}</span></div>
               <div className={styles.next}><BiSkipNext /></div>
             </div>
-            <div className={styles.fullscreen} id="fullscreen">{fullscreen}</div>
+            <div className={styles.fullscreen} onClick={expanScreen}>{fullscreen}</div>
           </div>
         </div>
       </div>
