@@ -9,36 +9,40 @@ import styles from "../styles/Home.module.scss"
 
 import screenfull from 'screenfull';
 import { songLists } from "../components/songLists/songLists"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 
 
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   // state for song play or not
   const [play, setPlay] = useState(false)
   // state for songs lists
   const [songs, setSongs] = useState(songLists)
 
   const play_pause_btn = () => {
-    if (!play) {
-      setPlay(true)
-     
-  
-    } 
-    else if (play) {
-      setPlay(false)
-
-    }
+    setPlay(!play)
+    const audio = new Audio("../assets/musics/song_1.mp3")
+    // audio.load()
+    audio.play()
+    console.log(audio.play());
   }
 
-  // FullScreen 
+  // FullScreen
   const expanScreen = () => {
     if (screenfull.isEnabled) {
       screenfull.toggle();
     }
 
   }
+
+
   return (
     <div className={styles.home}>
       <div className={styles.app__container}>
@@ -48,11 +52,21 @@ export default function Home() {
               <div className={styles.spot}></div>
               <span className={styles.swot}>SWOT</span>
               <div className={styles.anls}>
-                <div className={styles.plus}><FaPlus /></div>
+                <div className={styles.plus} data-aos="fade-right"
+                  data-aos-offset="100"
+                  // data-aos-delay='1000'
+                  data-aos-duration="3000"
+                  data-aos-easing="ease-in"><FaPlus /></div>
                 <span className={styles.analysis}>Analysis</span>
               </div>
             </div>
-            <div className={styles.circle}></div>
+            <div className={styles.circle} data-aos="fade-left"
+              data-aos-offset="100"
+              // data-aos-delay='1000'
+              data-aos-duration="3000"
+              data-aos-easing="ease-in">
+              <div></div>
+            </div>
           </div>
         </div>
         <div className={styles.player}>

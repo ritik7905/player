@@ -18,14 +18,14 @@
 .intro {
     display: flex;
     justify-content: center;
-    max-width: 100%;
+    width: 100%;
 }
 
 .intro_data {
     display: flex;
     justify-content: space-between;
-    // width: 100%;
     align-items: center;
+    max-width: 100%;
     .slog {
         display: flex;
         flex-direction: column;
@@ -54,6 +54,12 @@
             width: 100%;
             .plus {
                 font-size: 110px;
+                margin-top: -50px;
+                margin-left: -230px;
+                svg {
+                    color: #EBB191;
+                    animation: rotateCW 2.2s infinite linear;
+                }
             }
             .analysis {
                 font-size: 10rem;
@@ -63,12 +69,18 @@
         }
     }
     .circle {
-        width: 80px;
-        height: 80px;
-        border-radius: 50px;
-        box-shadow: 15px 15px 0 0 #d9c2aced;
-        transform: rotate(227deg);
-        font-size: 40px;
+        width: 100%;
+        div {
+            width: 100px;
+            height: 100px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid red;
+            border-bottom: 10px solid green;
+            border-right: 10px solid black;
+            border-radius: 50%;
+            animation: rotateCW 2.2s infinite linear;
+            box-sizing: border-box;
+        }
     }
 }
 
@@ -119,5 +131,16 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+@keyframes rotateCW {
+    from {
+        // opacity: 0;
+        transform: rotate(0deg);
+    }
+    to {
+        // opacity: 1;
+        transform: rotate(360deg);
     }
 }

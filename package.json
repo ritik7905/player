@@ -9,12 +9,15 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "aos": "^2.3.4",
+        "aos-animations": "^0.0.7",
         "framer-motion": "^6.3.16",
         "next": "12.1.6",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-icons": "^4.4.0",
-        "screenfull": "^6.0.2"
+        "screenfull": "^6.0.2",
+        "use-sound": "^4.0.1"
     },
     "devDependencies": {
         "eslint": "8.18.0",
