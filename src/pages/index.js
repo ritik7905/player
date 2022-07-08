@@ -11,6 +11,7 @@ import screenfull from 'screenfull';
 import { songLists } from "../components/songLists/songLists"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Player from './player/Player';
 
 
 
@@ -46,42 +47,27 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.app__container}>
-        <div className={styles.intro}>
-          <div className={styles.intro_data}>
-            <div className={styles.slog}>
-              <div className={styles.spot}></div>
-              <span className={styles.swot}>SWOT</span>
-              <div className={styles.anls}>
-                <div className={styles.plus} data-aos="fade-right"
-                  data-aos-offset="100"
-                  // data-aos-delay='1000'
-                  data-aos-duration="3000"
-                  data-aos-easing="ease-in"><FaPlus /></div>
-                <span className={styles.analysis}>Analysis</span>
+
+        {/* Plus sec */}
+        <div className={styles.plus}><FaPlus /></div>
+
+        <div className={styles.content_sec}>
+          <div className={styles.intro}>
+            <div className={styles.intro_data}>
+              <div className={styles.slog}>
+                <h1 className={styles.swot}>SWOT</h1>
+                <h3 className={styles.anls}>
+                  Analysis
+                </h3>
               </div>
             </div>
-            <div className={styles.circle} data-aos="fade-left"
-              data-aos-offset="100"
-              // data-aos-delay='1000'
-              data-aos-duration="3000"
-              data-aos-easing="ease-in">
-              <div></div>
-            </div>
           </div>
+          <Player />
         </div>
-        <div className={styles.player}>
-          <div className={styles.player_data}>
-            <div className={styles.volume}>
-              {volume}
-            </div>
-            <div className={styles.song_controler}>
-              <div className={styles.prev}><BiSkipPrevious /></div>
-              <div className={styles.song_lists}><span>01 / 12</span> <span onClick={play_pause_btn} className={styles.btns}>{!play ? <BiPlay /> : <BiPause />}</span></div>
-              <div className={styles.next}><BiSkipNext /></div>
-            </div>
-            <div className={styles.fullscreen} onClick={expanScreen}>{fullscreen}</div>
-          </div>
-        </div>
+
+
+        {/* Circle animation sec */}
+        <div className={styles.circle}></div>
       </div>
     </div>
   )

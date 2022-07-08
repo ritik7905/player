@@ -1,13 +1,25 @@
+@import "../styles/variables/mixins";
 .home {
-    padding: 0 2rem;
     background-color: #fdefdd;
     height: 100vh;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        bottom: -470px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        opacity: 0.1;
+        background: url("https://images.squarespace-cdn.com/content/v1/588b0c9115d5dbbd78c854a0/1489418574325-S4EW2T46COVYFOBRM0A7/WAVE-1s.gif?format=2500w");
+    }
 }
 
 .app__container {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,132 +27,119 @@
     width: 100%;
 }
 
+.content_sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .intro {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.plus {
+    font-size: 110px;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    color: #505050;
+    opacity: 0.7;
+    svg {
+        animation: rotation 8s infinite linear;
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+    }
 }
 
 .intro_data {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
     .slog {
         display: flex;
         flex-direction: column;
         text-align: center;
-        line-height: 1;
         position: relative;
         padding-bottom: 40px;
         border-bottom: 2px solid #9e9890;
-        .spot {
-            height: 50px;
-            width: 50px;
-            border-radius: 50px;
-            background-color: #00ffdc;
-            position: absolute;
-            top: 80px;
-            left: -25px;
-        }
+        margin-bottom: 100px;
         .swot {
-            font-size: 20rem;
+            font-size: 14rem;
             font-weight: 500;
+            margin: 0;
             color: #505050;
+            @include mobile {
+                font-size: 5rem;
+            }
+            @include iphone5 {
+                font-size: 4rem;
+            }
+            @include tablet {
+                font-size: 11rem;
+            }
+            @include iphone6 {
+                font-size: 6rem;
+            }
         }
         .anls {
+            font-size: 6rem;
             display: flex;
-            justify-content: space-between;
-            width: 100%;
-            .plus {
-                font-size: 110px;
-                margin-top: -50px;
-                margin-left: -230px;
-                svg {
-                    color: #EBB191;
-                    animation: rotateCW 2.2s infinite linear;
-                }
+            font-weight: 500;
+            justify-content: flex-end;
+            color: #505050;
+            margin: 0;
+            @include mobile {
+                font-size: 3rem;
             }
-            .analysis {
-                font-size: 10rem;
-                font-weight: 500;
-                color: #505050;
+            @include iphone5 {
+                font-size: 2rem;
             }
-        }
-    }
-    .circle {
-        width: 100%;
-        div {
-            width: 100px;
-            height: 100px;
-            border-top: 10px solid transparent;
-            border-left: 10px solid red;
-            border-bottom: 10px solid green;
-            border-right: 10px solid black;
-            border-radius: 50%;
-            animation: rotateCW 2.2s infinite linear;
-            box-sizing: border-box;
+            @include iphone6 {
+                font-size: 3rem;
+            }
         }
     }
 }
 
-.player {
-    background-color: #e3d7c6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 50%;
+.circle {
+    animation: animName 5s linear infinite;
+    width: 180px;
+    height: 180px;
+    background: #e3d6c6;
+    margin: 20px;
     position: absolute;
-    bottom: 70px;
-    .player_data {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 5px;
-        .volume,
-        .time_span,
-        .fullscreen {
-            margin: 0 30px;
-            cursor: pointer;
-        }
-        .song_controler {
-            display: flex;
-            align-items: center;
-            div {
-                margin: 0 15px;
-            }
-            .song_lists {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                 :nth-child(1) {
-                    margin-left: -20px;
-                }
-                 :nth-child(2) {
-                    svg {
-                        margin-left: 10px;
-                    }
-                }
-                .btns {
-                    transition: all 0.5s;
-                }
-            }
-            svg {
-                font-size: 35px;
-                cursor: pointer;
-            }
-        }
+    top: -40px;
+    right: -40px;
+    border-radius: 50px;
+    opacity: 0.4;
+}
+
+@keyframes animName {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
 @keyframes rotateCW {
     from {
-        // opacity: 0;
         transform: rotate(0deg);
     }
     to {
-        // opacity: 1;
         transform: rotate(360deg);
     }
 }
