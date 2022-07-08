@@ -35,7 +35,7 @@ const Player = () => {
         </div>
         <div className={styles.song_controler}>
           <div className={styles.prev}><BiSkipPrevious /></div>
-          <div className={styles.song_lists}><span>01</span>/<span>12</span>  <span onClick={play_pause_btn} className={styles.btns}>{!play ? <BiPlay /> : <BiPause />}</span></div>
+          <div className={styles.song_lists}><span>01</span>/<span>12</span>  <div onClick={play_pause_btn} className={styles.btns}>{!play ? <BiPlay /> : <BiPause />}</div></div>
           <div className={styles.next}><BiSkipNext /></div>
         </div>
         <div className={styles.fullscreen} onClick={expanScreen}>{fullscreen}</div>
